@@ -15,6 +15,10 @@ professionEntry = Entry(root, width=20, bg="gray", fg="white")
 streetEntry = Entry(root, width=20, bg="gray", fg="white")
 cityEntry = Entry(root, width=20, bg="gray", fg="white")
 
+def myConfirmation():
+    confirmationBanner = Label(root, text="user added succesfully !").grid(row=17, column=0, columnspan=2)
+    clearEntryButton = Button(root, text="clear", padx=10, pady=10).grid(row=18, column=0, columnspan=2)
+
 
 def myClick():
     rapportBanner = Label(root, text="New User").grid(row=10, column=0)
@@ -42,7 +46,7 @@ def myClick():
 
     # Add function to dbEntryButton
 
-    dbEntryButton = Button(root, text="Save to database", padx=10, pady=10).grid(row=16, column=0)
+    dbEntryButton = Button(root, text="Save to database", padx=10, pady=10, command=myConfirmation).grid(row=16, column=0, columnspan=2)
 
 # Label Widgets
 myBanner = Label(root, text="New Entry")
@@ -56,7 +60,7 @@ cityLabel = Label(root, text="City")
 myButton = Button(root, text="Submit", padx=10, pady=10, command=myClick)
 
 # Widget positions
-myBanner.grid(row=0, column=0)
+myBanner.grid(row=0, column=0, columnspan=2)
 fnameLabel.grid(row=1, column=0)
 fnameEntry.grid(row=2, column=0)
 
@@ -75,7 +79,7 @@ streetEntry.grid(row=8, column=0)
 cityLabel.grid(row=7, column=1)
 cityEntry.grid(row=8, column=1)
 
-myButton.grid(row=9, column=0)
+myButton.grid(row=9, column=0, columnspan=2)
 
 root.mainloop()
 
